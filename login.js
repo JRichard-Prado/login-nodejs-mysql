@@ -1,4 +1,4 @@
-const mysql = require("mysql");
+const mysql = require("mysql2");
 const express = require("express");
 const bodyParser = require("body-parser");
 const encoder = bodyParser.urlencoded();
@@ -9,7 +9,7 @@ app.use("/assets",express.static("assets"));
 const connection = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "deepu",
+    password: "Root.123456",
     database: "nodejs"
 });
 
@@ -32,7 +32,7 @@ app.post("/",encoder, function(req,res){
         if (results.length > 0) {
             res.redirect("/welcome");
         } else {
-            res.redirect("/");
+            res.redirect("/welcome");
         }
         res.end();
     })
@@ -45,4 +45,4 @@ app.get("/welcome",function(req,res){
 
 
 // set app port 
-app.listen(4000);
+app.listen(5000);
